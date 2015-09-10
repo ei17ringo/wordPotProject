@@ -2,7 +2,10 @@
 
 class UsersController extends AppController {
 
-	public function top() {}
+	public function top() {
+		$this->layout = 'topLayout';
+
+	}
 
 	public function login() {}
 
