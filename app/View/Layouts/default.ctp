@@ -53,7 +53,7 @@
     <div id="f">
       <div class="container">
         <div class="row">
-          <p>Crafted with <i class="fa fa-heart"></i> by BlackTie.co.</p>
+          <p>Copyright 2015 Team wordPot&nbsp;/&nbsp;Crafted with <i class="fa fa-heart"></i> by BlackTie.co.</p> 	
         </div>
       </div>
     </div>
