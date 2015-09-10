@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img style="width:70px;" src="word Pot.png" /></a>
+          <a class="navbar-brand" href="#"><img style="width:70px;" src="/wordPot/word Pot.png" /></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
