@@ -30,7 +30,7 @@
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><img style="width:70px;" src="word Pot.png" /></a>
+        <a class="navbar-brand" href="#"><img style="width:70px;" src="/wordPot/word Pot.png" /></a>
         <ul style="list-style:none;">
           
           <li class="headlink" >
