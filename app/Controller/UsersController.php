@@ -1,13 +1,13 @@
 <?php
 
-class PostsController extends AppController {
+class UsersController extends AppController {
 
-	public function index() {}
+	public function top() {}
 
-	public function index() {}
+	public function login() {}
 
-	public function index() {}
+	public function logout() {}
 
-	public function index() {}
+	public function signup() {}
 
 }
