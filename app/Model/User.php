@@ -1,6 +1,6 @@
 <?php
 
-class Post extends AppModel {
+class User extends AppModel {
 
 }
 
