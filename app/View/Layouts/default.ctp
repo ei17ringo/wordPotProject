@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>友達検索</title>
+    <title>wordPot</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/wordPot/assets/css/bootstrap.css" rel="stylesheet">
@@ -15,9 +15,21 @@
     <!-- Custom styles for this template -->
     <link href="/wordPot/assets/css/main.css" rel="stylesheet">
     <link href="/wordPot/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/wordPot/Rateit/src/rateit.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/wordPot/assets/js/chart.js"></script>
+    <script src="/wordPot/Rateit/src/jquery.rateit.min.js"></script>
+
+    <script>
+    $(function() {
+        $(".rateit1").rateit();
+    });
+    </script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
