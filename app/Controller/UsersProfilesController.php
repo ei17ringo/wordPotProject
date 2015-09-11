@@ -30,4 +30,7 @@ class UsersProfilesController extends AppController{
 		
 	}
 
+	public function View(){
+		
+	}
 ?>
