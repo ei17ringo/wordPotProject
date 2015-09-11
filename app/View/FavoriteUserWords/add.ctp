@@ -19,6 +19,6 @@
 
   <br />
   <br />
-    <div style="margin:auto;" class="centered">
-      <input class="btn" type="submit" value="追加" style="background-color: #ffbd66; width:200px;">
-    </div>
+  <div style="margin:auto;" class="centered">
+    <input class="btn" type="submit" value="追加" style="background-color: #ffbd66; width:200px;">
+  </div>
