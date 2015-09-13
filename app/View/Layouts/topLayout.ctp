@@ -59,9 +59,9 @@
 	    		</div><!-- /col-lg-8 -->
 	    	</div><!-- /row -->
 	    	<div class="centered">
-	    		<form id="shinki">
-	    			<input type="text" name="name" placeholder="ユーザーネーム" style="margin-right:10px; background-color:#ffefd5;">
-	    			<input type="text" name="password" placeholder="パスワード"
+	    		<form id="shinki" method="post" action="/wordPot/users/signup">
+	    			<input type="text" name="data['User']['username']" placeholder="ユーザーネーム" style="margin-right:10px; background-color:#ffefd5;">
+	    			<input type="password" name="data['User']['password']" placeholder="パスワード"
 	    			style="margin-right:10px;margin-left:10px;  background-color:#ffefd5;">
 	    			<input type="submit" value="新規登録" class="btn" style="background-color: #ffbd66;">
 	    		</form>
