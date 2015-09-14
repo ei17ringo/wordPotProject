@@ -28,7 +28,7 @@
   </head>
 
   <body>
-
+  	<?php echo $this->Session->flash('auth'); ?>
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -42,9 +42,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
           	<div style="display:inline">
-          		<li><form><input tupe="text" placeholder="ユーザーネーム" style="margin-right:10px;">
-          			<input tupe="password" placeholder="パスワード" style="margin-right:10px;" style="margin-left:10px;">
-            	<button type="submit" class="btn" style="background-color: #ffbd66;">ログイン</button></form></li>
+          		<li>
+          			<form method='post' action='/wordPot/user_words/mypage'>
+          				<input name="data[User][username]" type="text" placeholder="ユーザーネーム" style="margin-right:10px;">
+          				<input name="data[User][password]" type="password" placeholder="パスワード" style="margin-right:10px;" style="margin-left:10px;">
+            			<button type="submit" class="btn" style="background-color: #ffbd66;">ログイン</button>
+            		</form>
+            	</li>
         	</div>
           </ul>
         </div><!--/.nav-collapse -->
@@ -60,8 +64,8 @@
 	    	</div><!-- /row -->
 	    	<div class="centered">
 	    		<form id="shinki" method="post" action="/wordPot/users/signup">
-	    			<input type="text" name="data['User']['username']" placeholder="ユーザーネーム" style="margin-right:10px; background-color:#ffefd5;">
-	    			<input type="password" name="data['User']['password']" placeholder="パスワード"
+	    			<input type="text" name="data[User][username]" placeholder="ユーザーネーム" style="margin-right:10px; background-color:#ffefd5;">
+	    			<input type="password" name="data[User][password]" placeholder="パスワード"
 	    			style="margin-right:10px;margin-left:10px;  background-color:#ffefd5;">
 	    			<input type="submit" value="新規登録" class="btn" style="background-color: #ffbd66;">
 	    		</form>

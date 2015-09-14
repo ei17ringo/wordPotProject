@@ -22,5 +22,10 @@ class UserWordsController extends AppController{
 	public function view(){
 		
 	}
+
+	public function index(){
+		$this->set('userwords',$this->Post->find('all'));
+		
+	}
 }
 ?>
