@@ -2,7 +2,7 @@
     	<div class="col-lg-8 col-lg-offset-2 left" style="margin-bottom:3%;"><h2>まとめて追加</h2></div>
   </div>
 	<div class="container">
-    <form action = "mypage">
+    <form action = "index">
     <?php for ($i=0; $i <10 ; $i++) : ?>
     <div style="border: 1px solid #c0c0c0; padding:15px; border-radius:10px 10px; width:75%; margin:auto; background:white; margin-bottom:3%;">
         <div style="height:60px;">
