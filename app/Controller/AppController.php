@@ -35,8 +35,8 @@ class AppController extends Controller {
 		'Session',
 		'Auth' => array(
 			'loginRedirect' => array(
-				'controller',
-				'action'
+				'controller' => 'userWords',
+				'action' => 'mypage'
 			),
 			'logoutRedirect' => array(
 				'controller' => 'users',
