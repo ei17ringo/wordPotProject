@@ -5,7 +5,13 @@ class FavoriteUserWordsController extends AppController {
     public function add(){
         
     }
+
     public function delete() {
+
+    }
+
+    public function index(){
+    	
     }
 }
 ?>
