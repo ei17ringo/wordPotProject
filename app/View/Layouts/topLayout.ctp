@@ -43,7 +43,7 @@
           <ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
           	<div style="display:inline">
           		<li>
-          			<form method='post' action='/wordPot/user_words/mypage'>
+          			<form method='post' action='/wordPot/users/login'>
           				<input name="data[User][username]" type="text" placeholder="ユーザーネーム" style="margin-right:10px;">
           				<input name="data[User][password]" type="password" placeholder="パスワード" style="margin-right:10px;" style="margin-left:10px;">
             			<button type="submit" class="btn" style="background-color: #ffbd66;">ログイン</button>
