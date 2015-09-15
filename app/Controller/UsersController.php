@@ -6,7 +6,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter(){
 		parent::beforFilter();
-		$this->Auth->allow('signup');
+		//$this->Auth->allow('signup');
 	}
 
 	public function top() {
@@ -18,7 +18,9 @@ class UsersController extends AppController {
 			if($this->Auth->login()){
 				$this->redirect($this->Auth->redirect());
 			}else{
+
 				$this->Session->setFlash(__('ユーザー名かパスワードが違います。もう一度入力してください。'));
+				$this->redirect(array('action'=>'top'));
 			}
 		}
 	}

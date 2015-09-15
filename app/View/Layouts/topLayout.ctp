@@ -43,7 +43,7 @@
           <ul class="nav navbar-nav navbar-right" style="margin-top:10px;">
           	<div style="display:inline">
           		<li>
-          			<form method='post' action='/wordPot/user_words/mypage'>
+          			<form method='post' action='/wordPot/users/login'>
           				<input name="data[User][username]" type="text" placeholder="ユーザーネーム" style="margin-right:10px;">
           				<input name="data[User][password]" type="password" placeholder="パスワード" style="margin-right:10px;" style="margin-left:10px;">
             			<button type="submit" class="btn" style="background-color: #ffbd66;">ログイン</button>
@@ -59,6 +59,7 @@
 	    <div class="container">
 	    	<div class="row">
 	    		<div class="col-lg-8 col-lg-offset-2 centered">
+	    			<!--<img src="/wordPot/word Pot.png" /> -->
 	    			<h1>Word Pot</h1>
 	    		</div><!-- /col-lg-8 -->
 	    	</div><!-- /row -->
@@ -77,11 +78,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 centered">
-					<h3>WHAT WE CAN DO?</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3>英単語をストックしよう!</h3>
+					<p>あなたが今日、学んだ英単語を保存しよう。<br>意味は入力しなくても表示されるので便利です。<br>単語に対してメモをつけることもできます。</p>
 				</div>
 				<div class="col-lg-5 centered">
-					<img src="assets/img/iphone.png" alt="">
+					<img src="/wordPot/assets/img/iphone.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -91,13 +92,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
-					<img src="assets/img/iphone.png" alt="">
+					<img src="/wordPot/assets/img/iphone.png" alt="">
+				</div>
+				<div class="col-lg-7 centered">
+					<h3>意味を覚えるのに最適</h3>
+					<p>意味はカーソルを合わせると表示されるので<br>意味を覚えるのに最適です。</p>
 				</div>
 				
-				<div class="col-lg-7 centered">
-					<h3>WHAT WE CAN DO?</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -106,11 +107,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 centered">
-					<h3>WHAT WE CAN DO?</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3>英単語を共有しよう！</h3>
+					<p>タイムラインで他のユーザーが<br>どんな単語を学んでいるか知ることができます。<br>気になる単語は、お気に入り登録！</p>
 				</div>
 				<div class="col-lg-5 centered">
-					<img src="assets/img/iphone.png" alt="">
+					<img src="/wordPot/assets/img/iphone.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="green">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 centered">
+					<img src="/wordPot/assets/img/iphone.png" alt="">
+				</div>
+				<div class="col-lg-7 centered">
+					<h3>英語学習のモチベーションアップ！</h3>
+					<p>学習した量がランクになって表示されます。<br>
+						他のユーザーに負けないようにたくさん英単語を追加しよう。</p>
 				</div>
 			</div>
 		</div>
@@ -119,33 +135,13 @@
 
 
 	
-	<section id="contact"></section>
-	<div id="social">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-twitter"></i></a>
-					</div>
-					<div class="col-md-3">
-						<a href="#"><i class="fa fa-envelope"></i></a>
-					</div>
-				</div>
-			</div>
-		</div><!-- /container -->
-	</div><!-- /social -->
+	
 
 
 	<div id="f">
 		<div class="container">
 			<div class="row">
-				<p>Crafted with <i class="fa fa-heart"></i> by BlackTie.co.</p>
+				<p>Created by Team WordPot (ty yn yk ys)</p>
 			</div>
 		</div>
 	</div>

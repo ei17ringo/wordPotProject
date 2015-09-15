@@ -46,13 +46,21 @@
         <ul style="list-style:none;">
           
           <li class="headlink" >
-            <a style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">my page</a>
+            <a href="/wordPot/user_words/mypage" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">タイムライン</a>
           </li>
           <li class="headlink">
-            <a style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
+            <a href="wordPot/user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
           </li>
+
+          <li class="headlink">
+            <a href="/wordPot/user_words/add" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">追加</a>
+          <li class="headlink">
+            <a href="/wordPot/words/searchindex" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">検索</a>
+          <li class="headlink">
+            <a href="/wordPot/favorite_user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">お気に入り</a>
+
           <li class="navbar-right">
-            <button type="submit">ログアウト</button>
+            <input type="button" onclick="location.href='/wordPot/Users/top'"value="ログアウト">
           </li>
         </ul>
       </div>
