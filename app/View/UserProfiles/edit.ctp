@@ -27,23 +27,6 @@
     <![endif]-->
   </head>
 <body>
-	<div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img style="width:70px;" src="word Pot.png" /></a>
-        <ul style="list-style:none;">
-          
-          <li class="headlink">
-            <a style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">my page</a>
-          </li>
-          <li class="headlink">
-            <a style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
-          </li>
-          <li class="navbar-right">
-            <button type="submit">ログアウト</button>
-          </li>
-        </ul>
-      </div>
-    </div>
 
 <br><br>  
 <div class="container-fluid well span6" style="overflow:hidden;">
@@ -64,23 +47,15 @@
       </div>
     </div>
   </div>
-  <div class="comment" style="clear:both;width:450px;height:350px;margin-top:20px;">単語帳</div>
+ 
 </div>
         
-    <div id="f">
-      <div class="container">
-        <div class="row">
-          <p>Crafted with <i class="fa fa-heart"></i> by BlackTie.co.</p>
-        </div>
-      </div>
-    </div>
-
-
-
-
-  <script src="assets/js/bootstrap.js"></script>
-      
     
+
+
+
+
+  
  
 
 
