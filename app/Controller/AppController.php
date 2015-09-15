@@ -51,6 +51,6 @@ class AppController extends Controller {
 	);
 
 	public function beforFilter(){
-		$this->Auth->allow('top');
+		$this->Auth->allow('top','login','logout');
 	}
 }

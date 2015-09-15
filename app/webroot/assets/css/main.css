@@ -133,8 +133,8 @@ a:after {
 /* hello */
 #hello {
 	width: 100%;
-	padding-top: 250px;
-	padding-bottom: 0px;
+	padding-top: 180px;
+	padding-bottom: 80px;
 }
 
 #hello h1 {
@@ -152,14 +152,14 @@ a:after {
 /* Green */
 #green {
 	background-color: ;
-	padding-top: 50px;
+	padding-top: 150px;
 	margin-bottom: 0px;
 	background-image: url(/var/www/html/spot/bg089/bg089_10.gif); 
 
 }
 
 #green h3 {
-	color: white;
+	color: gray;
 	font-weight: 400;
 	margin-bottom: 35px;
 }
