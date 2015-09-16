@@ -266,3 +266,7 @@ a:after {
 	float: left;
 	border-radius:5px 5px;
 }
+
+.hoshi:hover{
+	color: #ffbd66;
+}

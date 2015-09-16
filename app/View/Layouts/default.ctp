@@ -49,7 +49,7 @@
             <a href="/wordPot/user_words/mypage" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">タイムライン</a>
           </li>
           <li class="headlink">
-            <a href="wordPot/user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
+            <a href="/wordPot/user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
           </li>
 
           <li class="headlink">
