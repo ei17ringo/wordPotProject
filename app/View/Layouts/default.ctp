@@ -60,7 +60,7 @@
             <a href="/wordPot/favorite_user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">お気に入り</a>
 
           <li class="navbar-right">
-            <input type="button" onclick="location.href='/wordPot/Users/top'"value="ログアウト">
+            <input class="btn" style="background-color: #ffbd66;" type="button" onclick="location.href='/wordPot/Users/top'"value="ログアウト">
           </li>
         </ul>
       </div>
