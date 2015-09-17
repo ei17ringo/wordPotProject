@@ -18,17 +18,17 @@
       <span style="margin-left:15%; margin-bottom:15px; background-color:white; font-weight:bold;">◯◯の検索結果　◯◯件</span>
 
       <?php foreach($word_friends as $word_friend): ?>
-      <div class="msg" style="background-color:white; height:90px;">
-          <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px;">
+      <div class="msg" style="background-color:white; height:100px;">
+          <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
           <div style="width:200px; margin:0px; float:left;">
-            <div style="padding-bottom:20px; padding-left:40px;">
+            <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
               <a style=><?php echo $word_friend['UserProfile']['nickname']; ?></a><br />
             </div>
             <div style="padding-left:40px;">
               <span>ランク：<?php echo $word_friend['UserProfile']['rank']; ?></span>
             </div>
           </div>
-          <div>検索した英単語</div>
+          <div style="font-size:120%; margin-bottom:5px;"><?php echo $word_friend['Word']['word']; ?></div>
           <div class="comment"><p><?php echo $word_friend['UserWord']['comment']; ?></p></div> 
       </div>
     <?php endforeach; ?>

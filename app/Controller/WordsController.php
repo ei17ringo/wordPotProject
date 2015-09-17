@@ -11,13 +11,15 @@ class WordsController extends AppController {
 
         $this->Prg->commonProcess();
 
-        //$conditions = $this->Word->parseCriteria($this->passedArgs);
+        debug($this->passedArgs);
 
-        $this->set('searchfriends', $this->Word->find('all',array('conditions'=>$conditions,'order'=>array('UserWord.created DESC'))));
+        $conditions_w = $this->Word->parseCriteria($this->passedArgs);
+
+        //$this->set('searchfriends', $this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC'))));
     	
-        $this->set('tests',$this->Word->find('all'));
+        //$this->set('tests',$this->Word->find('all'));
 
-    	$word_friends = $this->Word->find('all'); //$word_friendsにテーブルwordsのデータを代入
+    	$word_friends = $this->Word->find('all',$this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC')))); //$word_friendsにテーブルwordsのデータを代入
 
         $num=0;
 
