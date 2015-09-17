@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row" style="margin:120px;">
+  <h3 style="margin:25px 0px 30px 0px; text-decoration: underline;">単語詳細ページ</h3>
   <div class="col-sm-2">
     <div style="border:1px solid #c0c0c0; border-radious:10px 10px; background:white; width:50%;margin:1% 70%;">
       <span>カテゴリー一覧</span>

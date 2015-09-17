@@ -1,5 +1,5 @@
-<div class="row" style="margin-top:10%;">
-  <div class="col-lg-8 col-lg-offset-2 left"><h1><b>編集</b></h1></div>
+<div style="margin:120px;">
+  <h3 style="margin:25px 0px 30px 0px; text-decoration: underline;">編集</h3>
 </div>
 <div class="container">
   <div style="width:50%;margin:auto;">
