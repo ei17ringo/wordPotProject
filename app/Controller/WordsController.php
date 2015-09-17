@@ -21,10 +21,10 @@ class WordsController extends AppController {
 
         $num=0;
 
-		foreach($word_friends as $word_friend){//それぞれのUserWordのuser_idでUserProfileのuser_idを検索したい　そのための変数
+		foreach($word_friends as $word_friend){
 
-    		$conditions = array('UserProfile.user_id' => array($word_friend[$num]['UserWord']['user_id']));
-
+    		$conditions = array('UserProfile.user_id' => array($word_friend['UserWord']['user_id']));
+            //それぞれのUserWordのuser_idでUserProfileのuser_idを検索したい　そのための変数
             $search_user_profile = $this->UserProfile->find('first',array('conditions' => $conditions));
 
             $word_friends[$num]['UserProfile'] = $search_user_profile['UserProfile'];
