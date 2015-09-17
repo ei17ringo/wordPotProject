@@ -18,11 +18,13 @@ class UsersController extends AppController {
 			if($this->Auth->login()){
 				$this->redirect($this->Auth->redirect());
 			}else{
-
 				$this->Session->setFlash(__('ユーザー名かパスワードが違います。もう一度入力してください。'));
 				$this->redirect(array('action'=>'top'));
 			}
+		}else{
+			$this->redirect(array('action'=>'top'));
 		}
+
 	}
 
 	public function logout() {

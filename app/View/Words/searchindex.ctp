@@ -8,6 +8,8 @@
         echo $this->Form->end();
         //echo $this->Word->find('all');
         debug($tests);
+        debug($conditions);
+
       ?>
         <!--<form>
           <input type="text" placeholder="単語から友達を検索">
