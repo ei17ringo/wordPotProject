@@ -240,6 +240,7 @@ a:after {
 
 .headlink{
 	margin-top: 25px;
+	float: right;
 }
 .msg {
 	/*clear: both;*/
@@ -269,4 +270,13 @@ a:after {
 
 .hoshi:hover{
 	color: #ffbd66;
+}
+
+.navbar-right{
+	margin-top: 15px;
+}
+
+.name{
+	float: left;
+	margin-top: 20px;
 }
