@@ -3,11 +3,14 @@
     <input type="text" name="example2" size="30" maxlength="30" value="word">
 
     <input type="text" name="example2" size="30" maxlength="30" value="comments">
-
     <button type="button" name="aaa" value="aaa">
     <font size="2">share!</font>
     </button>
   </div>
+
+<?php
+  //foreach
+?>
 
       <div class="msg">
           <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
@@ -15,7 +18,7 @@
             <a>ニックネーム  </a><br />
             <span>rank </span>
           </div>
-          <div class="comment">単語</div>
+          <div class="new word">new word</div>
           <div class="comment">コメント</div> 
           <input type="submit" value="★" class="btn" style="background-color: #ffbd66;">
       </div>
@@ -25,7 +28,9 @@
             <a>ニックネーム  </a><br />
             <span>rank </span>
           </div>
+          <div class="new word">new word</div>
           <div class="comment">コメント</div> 
+          <input type="submit" value="★" class="btn" style="background-color: #ffbd66;">
       </div>
       <div class="msg">
           <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
@@ -33,7 +38,9 @@
             <a>ニックネーム  </a><br />
             <span>rank </span>
           </div>
-          <div class="comment">コメント</div> 
+          <div class="new word">new word</div>
+          <div class="comment">コメント</div>
+          <input type="submit" value="★" class="btn" style="background-color: #ffbd66;"> 
       </div>
       <div class="msg">
           <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
@@ -41,7 +48,9 @@
             <a>ニックネーム  </a><br />
             <span>rank </span>
           </div>
-          <div class="comment">コメント</div> 
+          <div class="new word">new word</div>
+          <div class="comment">コメント</div>
+          <input class="hoshi" type="submit" value="★" class="btn">
       </div>
       <div class="msg">
           <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
@@ -49,6 +58,8 @@
             <a>ニックネーム  </a><br />
             <span>rank </span>
           </div>
-          <div class="comment">コメント</div> 
+          <div class="new word">new word</div>
+          <div class="comment">コメント</div>
+          <input type="submit" value="★" class="btn" style="background-color: #ffbd66;">
       </div>
     </div>

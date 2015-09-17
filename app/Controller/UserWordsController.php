@@ -5,6 +5,11 @@ class UserWordsController extends AppController{
 	public $uses = array('Word', 'UserWord');
 
 	public function mypage(){
+		
+	//最新２０件のデータを取得する
+	//find(string $type = 'first', array $params = array())
+	$userwords = $this->UserWord->find('all',array('limit' => 20, 'order' => array('UserWord.modified DESC')));
+	$this->set(compact('userwords'));
 
 	}
 
@@ -56,7 +61,7 @@ class UserWordsController extends AppController{
 	}
 
 	public function index(){
-		$this->set('userwords',$this->Post->find('all'));
+		$this->set('userwords',$this->UserWord->find('all'));
 		
 	}
 }

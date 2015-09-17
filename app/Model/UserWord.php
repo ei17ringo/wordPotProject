@@ -8,11 +8,15 @@ class UserWord extends AppModel{
     						'word' => array('rule' => 'notEmpty'),
     						'comment' => array('rule' => 'notEmpty'));
 
-	// public $belongsTo = array(
-	// 	'Words' => array(
-	// 		'className' => 'Word',
-	// 		'foreignKey' => 'word_id'
-	// 		)
-	// 	);
+	public $belongsTo = array(
+		'Word' => array(
+			'className' => 'Word',
+			'foreignKey' => 'word_id'
+			),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+			),
+		);
 }
 ?>

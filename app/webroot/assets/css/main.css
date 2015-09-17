@@ -245,7 +245,7 @@ a:after {
 	/*clear: both;*/
 	border-top: 1px solid #ccc;
 	padding-top: 10px;
-	height: 80px;
+	height: 100px;
 	width: 850px;
 	margin: 0px auto;
 	overflow: hidden;
@@ -265,4 +265,8 @@ a:after {
 	border: 1px solid #c0c0c0;
 	float: left;
 	border-radius:5px 5px;
+}
+
+.hoshi:hover{
+	color: #ffbd66;
 }
