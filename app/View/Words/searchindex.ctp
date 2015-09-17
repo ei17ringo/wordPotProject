@@ -8,7 +8,7 @@
         echo $this->Form->end();
         //echo $this->Word->find('all');
         debug($tests);
-        debug($conditions);
+        debug($word_friends);
 
       ?>
         <!--<form>
