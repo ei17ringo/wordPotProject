@@ -9,7 +9,20 @@
   </div>
 
 <?php
-  //foreach
+  //debug($userwords);
+  foreach ($userwords as $userword) { ?>
+      <div class="msg">
+          <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
+          <div style="width:200px; margin:0px; float:left;">
+            <a><?php echo $userword['User']['username']?></a><br />
+            <span><?php echo $userword['UserWord']['rank']?></span>
+          </div>
+          <div class="new word"><?php echo $userword['Word']['word']?></div>
+          <div class="comment"><?php echo $userword['UserWord']['comment']; ?></div> 
+          <input type="submit" value="★" class="btn" style="background-color: #ffbd66;">
+      </div>    
+<?php    
+  }
 ?>
 
       <div class="msg">

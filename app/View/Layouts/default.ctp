@@ -40,28 +40,41 @@
   </head>
   <body>
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><img style="width:70px;" src="/wordPot/word Pot.png" /></a>
+        <a href="/wordPot/user_words/mypage" class="navbar-brand" href="#"><img style="width:70px;" src="/wordPot/word Pot.png" /></a>
+        <p class="name">○○さん、こんにちは！</p>
+        
         <ul style="list-style:none;">
-          
-          <li class="headlink" >
-            <a href="/wordPot/user_words/mypage" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">タイムライン</a>
-          </li>
-          <li class="headlink">
-            <a href="/wordPot/user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
-          </li>
-
-          <li class="headlink">
-            <a href="/wordPot/user_words/add" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">追加</a>
-          <li class="headlink">
-            <a href="/wordPot/words/searchindex" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">検索</a>
-          <li class="headlink">
-            <a href="/wordPot/favorite_user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">お気に入り</a>
 
           <li class="navbar-right">
             <input class="btn" style="background-color: #ffbd66;" type="button" onclick="location.href='/wordPot/Users/top'"value="ログアウト">
           </li>
+
+          <li class="headlink">
+            <a href="/wordPot/user_profiles/edit" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">プロフィール編集</a>
+          </li>
+
+          <li class="headlink">
+            <a href="/wordPot/favorite_user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">お気に入り</a>
+          </li>
+
+          <li class="headlink">
+            <a href="/wordPot/words/searchindex" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">検索</a>
+          </li>
+
+          <li class="headlink">
+            <a href="/wordPot/user_words/add" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">追加</a>
+          </li>
+
+          <li class="headlink">
+            <a href="/wordPot/user_words/index" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">あなたの単語帳</a>
+          </li>
+
+          <li class="headlink" >
+            <a href="/wordPot/user_words/mypage" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">タイムライン</a>
+          </li>
+
         </ul>
       </div>
     </div>
