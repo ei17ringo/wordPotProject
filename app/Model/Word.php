@@ -12,4 +12,5 @@ class Word extends AppModel{
 			'foreignKey' => 'id'
 			)
 		);
+}
 ?>
