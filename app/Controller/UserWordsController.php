@@ -14,8 +14,9 @@ class UserWordsController extends AppController{
 	}
 
 	public function add(){
+		$user_id = $this->Auth->user('id');
 	//入力された単語をWordsテーブルから検索する
-		debug($this->request->data);
+		//debug($this->request->data);
         if ($this->request->is('post')) {
             //$this->UserWord->create();
         	//word,commentがあるとき表示されるif文を作る
@@ -34,7 +35,7 @@ class UserWordsController extends AppController{
             		}
 	            	if(!empty($searchword)){
 		            	$this->UserWord->create();
-		            	$AddWord['UserWord']['user_id'] = 1;
+		            	$AddWord['UserWord']['user_id'] = $user_id;
 		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
 		            	$AddWord['UserWord']['study_date'] = date("Y-m-d");
 		            	$AddWord['UserWord']['rank'] = 3;
@@ -52,12 +53,24 @@ class UserWordsController extends AppController{
         }
 	}
 
-	public function edit(){
+	public function edit($id){
+		$this->UserWord->id=$id;
 
-	}
+		if ($this->request->is('post')) {
+	        if ($this->UserWord->save($this->request->data)) {
+	            $this->Session->setFlash('編集しました！');
+	            return $this->redirect(array('action'=>'view'));
+	      	} else {
+	      		$this->Session->setFlash('編集に失敗しました！');
+	      	} else {
+	      		$this->set('userwords',$this->UserWord->findById($id));
+	      	}
+    }
+   
 
 	public function view(){
-		
+		$results = $this->UserWord->getData($id);
+		$this->set('userwords',$results);
 	}
 
 	public function index(){

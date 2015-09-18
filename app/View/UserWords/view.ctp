@@ -15,9 +15,11 @@
   </div>
     
   <div class="col-sm-10">
-        
+    <?php foreach ($userwords as $data): ?>
     <div style="margin-right:auto;margin-left:auto; width:70%;">
-      <span class="col-lg-6 col-lg-offset-4 left"><h1><b>WORD</b></h1>
+      <span class="col-lg-6 col-lg-offset-4 left"><h1><b><?php var_dump($data);//echo $data['UserWord']['word_id'];?></b></h1>
+      <input class="btn" type="submit" value="編集" style="background-color: #ffbd66; width:90px;">
+
       </span>
       <h3 style="clear:both;">重要度</h3>
       <div class="rateit1" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div>
@@ -26,8 +28,9 @@
       <h3>メモ</h3>
       <form class="form-horizontal" style="margin-bottom:50px;">
         <label class="control-label" for="text"></label>
-        <textarea style="width:90%; height:100px; resize:none; margin-right:auto;"></textarea>
+        <textarea style="width:90%; height:100px; resize:none; margin-right:auto;"><?php echo $data['UserWord']['comment']; ?></textarea>
       </form>
     </div>
-  </div>
+  <?php endforeach;?>
+  </div>  
 </div>
