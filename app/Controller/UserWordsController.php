@@ -14,7 +14,6 @@ class UserWordsController extends AppController{
 	}
 
 	public function add(){
-		$user_id = $this->Auth->user('id');
 	//入力された単語をWordsテーブルから検索する
 		//debug($this->request->data);
         if ($this->request->is('post')) {
@@ -23,7 +22,7 @@ class UserWordsController extends AppController{
             foreach ($this->request->data as $key => $AddWord) {
             	if(($AddWord['Word']['word'] !== '') && ($AddWord['UserWord']['comment'] !== '')) {
         			$searchword = $this->Word->find('first', array('conditions'=>array('word' => $AddWord['Word']['word'])));		
-	            	var_dump($searchword);
+	            	//var_dump($searchword);
 	            	//入力されたwordがあるかどうかを確かめる
 	            	if (empty($searchword)){
 	            		$this->Word->create();
@@ -35,6 +34,7 @@ class UserWordsController extends AppController{
             		}
 	            	if(!empty($searchword)){
 		            	$this->UserWord->create();
+		            	$user_id = $this->Auth->user('id');
 		            	$AddWord['UserWord']['user_id'] = $user_id;
 		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
 		            	$AddWord['UserWord']['study_date'] = date("Y-m-d");
@@ -53,23 +53,21 @@ class UserWordsController extends AppController{
         }
 	}
 
-	public function edit($id){
-		$this->UserWord->id=$id;
-
+	public function edit(){
+		//$this->UserWord->id=$id;
+		//$this->request->data=$this->UserWord->findById($id);
 		if ($this->request->is('post')) {
 	        if ($this->UserWord->save($this->request->data)) {
 	            $this->Session->setFlash('編集しました！');
 	            return $this->redirect(array('action'=>'view'));
 	      	} else {
 	      		$this->Session->setFlash('編集に失敗しました！');
-	      	} else {
-	      		$this->set('userwords',$this->UserWord->findById($id));
 	      	}
-    }
-   
-
-	public function view(){
-		$results = $this->UserWord->getData($id);
+    	}
+	}
+   	
+	public function view($id){
+		$results = $this->UserWord->findById($id);
 		$this->set('userwords',$results);
 	}
 
