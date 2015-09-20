@@ -1,10 +1,10 @@
-    <div style="margin-top:50px;">
+    <div style="margin-top:120px;">
 
      <div style="margin-left:15%; margin-bottom:15px;">
       <?php
         echo $this->Form->create();
-        echo $this->Form->input('',array('type'=>'text','placeholder'=>'単語から友達を検索'));
-        echo $this->Form->button('検索',array('type'=>'submit','class'=>'btn','style'=>'background-color:#ffbd66;'));
+        echo $this->Form->input('word',array('type'=>'text','placeholder'=>'単語から友達を検索','label'=>false,'div'=> false,'style'=>'width:300px; height:40px; border:solid 1px;' ));
+        echo $this->Form->button('検索',array('type'=>'submit','class'=>'btn','style'=>'background-color:#ffbd66; left-margin:10px; height:40px;'));
         echo $this->Form->end();
         //debug($tests);
         //debug($word_friends);
@@ -15,7 +15,7 @@
           <input type="submit" value="検索" class="btn" style="background-color: #ffbd66;">
         </form> -->
       </div>
-      <span style="margin-left:15%; margin-bottom:15px; background-color:white; font-weight:bold;">◯◯の検索結果　◯◯件</span>
+      <span style="margin-left:15%; margin-bottom:15px; background-color:white;"><span style="font-weight:bold;">&quot<?php echo $searched_word; ?>&quot</span>の検索結果</span>
 
       <?php foreach($word_friends as $word_friend): ?>
       <div class="msg" style="background-color:white; height:100px;">
@@ -32,6 +32,7 @@
           <div class="comment"><p><?php echo $word_friend['UserWord']['comment']; ?></p></div> 
       </div>
     <?php endforeach; ?>
+  </div>
 
 
 

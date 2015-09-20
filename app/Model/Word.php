@@ -1,9 +1,11 @@
 <?php
 class Word extends AppModel{
-	public $actAs = array('Search.Searchable');
+	public $actsAs = array('Search.Searchable');
 
 	public $filterArgs = array(
-		'word' => array('type' => 'like', 'field' => array('Word.word')),
+		'word' => array(
+			'type' => 'like'
+			),
 		);
 
 	public $belongsTo = array(

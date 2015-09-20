@@ -5,21 +5,25 @@ class WordsController extends AppController {
 
 	public $components = array('Search.Prg');
 
-	public $uses = array('Word','UserProfile','UserWord');
+	public $uses = array('Word','UserWord', 'UserProfile');
 
     public function searchindex(){
 
         $this->Prg->commonProcess();
 
-        debug($this->passedArgs);
+        if(empty($this->passedArgs)){
+            $word_friends = $this->Word->find('all',array('order'=>array('UserWord.created DESC')));
+        }else{
+            $conditions_w = $this->Word->parseCriteria($this->passedArgs);
 
-        $conditions_w = $this->Word->parseCriteria($this->passedArgs);
+            //$this->set('searchfriends', $this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC'))));
+            
+            //$this->set('tests',$this->Word->find('all'));
 
-        //$this->set('searchfriends', $this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC'))));
-    	
-        //$this->set('tests',$this->Word->find('all'));
+            $word_friends = $this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC'))); //$word_friendsにテーブルwordsのデータを代入
+        }
 
-    	$word_friends = $this->Word->find('all',$this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC')))); //$word_friendsにテーブルwordsのデータを代入
+        
 
         $num=0;
 
@@ -35,8 +39,10 @@ class WordsController extends AppController {
     	}
 
         $this->set('word_friends',$word_friends);
-    	
 
+        $searched_word = $this->request->data('Word.word');
+
+        $this->set('searched_word',$searched_word);
     }
 }
 ?>
