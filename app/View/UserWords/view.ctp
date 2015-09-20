@@ -28,7 +28,7 @@
       <textarea style="width:90%; height:200px; resize:none; margin-right:auto;"></textarea>
       <h3>メモ</h3>
       <label class="control-label" for="text"></label>
-      <textarea style="width:90%; height:100px; resize:none; margin-right:auto;"><?php echo $data['UserWord']['comment']='動詞'; ?></textarea>
+      <textarea style="width:90%; height:100px; resize:none; margin-right:auto;"><?php echo $data['UserWord']['comment']; ?></textarea>
     </div>
     <?php endforeach;?>
     </form>
