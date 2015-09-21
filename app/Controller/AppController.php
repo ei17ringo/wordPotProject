@@ -52,5 +52,8 @@ class AppController extends Controller {
 
 	public function beforFilter(){
 		//$this->Auth->allow('top','login','logout','signup');
+		// $nickname = $this->Auth->user('username');
+		$nickname = 'げすと';
+		$this->set(compact('nickname'));
 	}
 }

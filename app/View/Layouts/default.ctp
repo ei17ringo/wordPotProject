@@ -27,7 +27,7 @@
 
     <script>
     $(function() {
-        $(".rateit1").rateit();
+    $(".rateit1").rateit();
     });
     </script>
 
