@@ -26,14 +26,16 @@
           <th>意味</th>
           <th></th>
         </tr>
-        <tr>
-          <td>3</td>
-          <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div></td>
-          <td><a>disgust</a></td>
-          <td id="meaning">〈人に〉胸を悪くさせる</td>
-          <td><button class="btn btn-default">編集</button></td>
-        </tr>
-        <tr>
+        <?php foreach($userwords as $userword): ?>
+          <tr>
+            <td>3</td>
+            <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div></td>
+            <td><a><?php echo $userword['Word']['word']; ?></a></td>
+            <td id="meaning">〈人に〉胸を悪くさせる</td>
+            <td><button class="btn btn-default">編集</button></td>
+          </tr>
+        <?php endforeach; ?>
+        <!-- <tr>
           <td>2</td>
           <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div></td>
           <td><a>confirm</a></td>
@@ -46,6 +48,7 @@
           <td><a>apply</a></td>
           <td id="meaning">〈規則・原理などを〉〔…に〕適用する</td>
           <td><button class="btn btn-default">編集</button></td>
-        </tr>
+        </tr>-->
       </table>
-    </div>
+    </div> 
+    
