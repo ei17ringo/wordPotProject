@@ -52,9 +52,5 @@ class AppController extends Controller {
 
 	public function beforFilter(){
 		$this->Auth->allow('top','login','logout','signup');
-<<<<<<< HEAD
-		parent::beforeFilter();
-=======
->>>>>>> 2a4bc7b387154ab7cc8f1c87a4abb4c85fce8e22
 	}
 }
