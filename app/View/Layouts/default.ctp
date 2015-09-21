@@ -27,14 +27,10 @@
 
     <script>
     $(function() {
-<<<<<<< HEAD
-    $(".rateit1").rateit();
-=======
         $(".rateit1").rateit();
         $(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
           $("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
       });
->>>>>>> d69832741aaf5ba235849dc69d70e0e7c8522007
     });
     </script>
 
