@@ -29,7 +29,7 @@
     $(function() {
         $(".rateit1").rateit();
         $(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
-          $("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
       });
     });
     </script>
@@ -77,7 +77,7 @@
           <li class="headlink" >
             <a href="/wordPot/user_words/mypage" style="font-size:14px; margin-right: 18px;" class="headanchor nav navbar-nav">タイムライン</a>
           </li>
-
+          
         </ul>
       </div>
     </div>
