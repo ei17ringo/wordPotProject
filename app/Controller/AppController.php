@@ -31,30 +31,29 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array(
-		'Session',
-		'Auth' => array(
-			'loginRedirect' => array(
-				'controller' => 'userWords',
-				'action' => 'mypage'
-			),
-			'logoutRedirect' => array(
-				'controller' => 'users',
-				'action' => 'top'
-			),
-			'authenticate' => array(
-				'Form' => array(
-				'passwordHasher' => 'Blowfish'
-				)
-			)
-		)
-	);
+	// public $components = array(
+	// 	'Session',
+	// 	'Auth' => array(
+	// 		'loginRedirect' => array(
+	// 			'controller' => 'userWords',
+	// 			'action' => 'mypage'
+	// 		),
+	// 		'logoutRedirect' => array(
+	// 			'controller' => 'users',
+	// 			'action' => 'top'
+	// 		),
+	// 		'authenticate' => array(
+	// 			'Form' => array(
+	// 			'passwordHasher' => 'Blowfish'
+	// 			)
+	// 		)
+	// 	)
+	// );
 
 	public function beforFilter(){
-		$this->Auth->allow('top','login','logout','signup');
-<<<<<<< HEAD
-		parent::beforeFilter();
-=======
->>>>>>> 2a4bc7b387154ab7cc8f1c87a4abb4c85fce8e22
+		//$this->Auth->allow('top','login','logout','signup');
+		// $nickname = $this->Auth->user('username');
+		$nickname = 'げすと';
+		$this->set(compact('nickname'));
 	}
 }
