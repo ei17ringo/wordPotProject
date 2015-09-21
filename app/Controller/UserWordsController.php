@@ -72,7 +72,8 @@ class UserWordsController extends AppController{
 	}
 
 	public function index(){
-		$this->set('userwords',$this->UserWord->find('all'));
+		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
+		$this->set('userwords',$this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC'))));
 		
 	}
 }
