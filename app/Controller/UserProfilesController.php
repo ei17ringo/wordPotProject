@@ -16,7 +16,7 @@ class UserProfilesController extends AppController{
 		$conditions = array('user_id', $user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);
-
+		$this->set('userword', $userword);
 	}
 
 	
