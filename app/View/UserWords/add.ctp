@@ -5,8 +5,62 @@
         $("#rate0").bind('rated', function() {
           //alert('rate0:rating: ' + $(this).rateit('value'));
         //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
-        $('#rate0').val($(this).rateit('value'));
-      });
+        $('#rank-0').val($(this).rateit('value'));
+        });
+        
+        $("#rate1").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-1').val($(this).rateit('value'));
+        });
+
+        $("#rate2").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-2').val($(this).rateit('value'));
+        });
+
+        $("#rate3").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-3').val($(this).rateit('value'));
+        });
+
+        $("#rate4").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-4').val($(this).rateit('value'));
+        });
+
+        $("#rate5").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-5').val($(this).rateit('value'));
+        });
+
+        $("#rate6").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-6').val($(this).rateit('value'));
+        });
+
+        $("#rate7").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-7').val($(this).rateit('value'));
+        });
+
+        $("#rate8").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-8').val($(this).rateit('value'));
+        });
+
+        $("#rate9").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rank-9').val($(this).rateit('value'));
+        });
     });
 </script>
 
