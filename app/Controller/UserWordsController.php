@@ -31,15 +31,15 @@ class UserWordsController extends AppController{
 		            	$newid = $this->Word->getLastInsertID();
 		            	$searchword['Word'] = $AddWord['Word'];
 		            	$searchword['Word']['id'] = $newid;
-            		}else{
+	            	}
+
 	            	 	$this->UserWord->create();
 		            	//$user_id = $this->Auth->user('id');
 		            	$AddWord['UserWord']['user_id'] = 1;
 		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
 		            	$AddWord['UserWord']['study_date'] = date("Y-m-d H:i:s");
-		            	$AddWord['UserWord']['rank'] = ;
+		            	$AddWord['UserWord']['rank'] = 3;
 		            	$this->UserWord->save($AddWord);
-	            	}
             	}
             }
 
