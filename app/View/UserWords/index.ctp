@@ -26,14 +26,17 @@
           <th>意味</th>
           <th></th>
         </tr>
+        <?php $i=1; ?>
         <?php foreach($userwords as $userword): ?>
+        
           <tr>
-            <td>3</td>
+            <td><?php echo $i; ?></td>
             <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div></td>
             <td><a><?php echo $userword['Word']['word']; ?></a></td>
             <td id="meaning">〈人に〉胸を悪くさせる</td>
             <td><button class="btn btn-default">編集</button></td>
           </tr>
+          <?php $i++; ?>
         <?php endforeach; ?>
         <!-- <tr>
           <td>2</td>
@@ -51,4 +54,3 @@
         </tr>-->
       </table>
     </div> 
-    
