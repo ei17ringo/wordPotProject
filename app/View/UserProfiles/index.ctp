@@ -1,6 +1,6 @@
 
 <br><br>  
-
+<meta charset="utf-8">
 <div style="margin:120px;">
   <div class="container-fluid well span6" style="overflow:hidden;">
   <!--<div class="row-fluid">-->
@@ -9,7 +9,7 @@
         <img src="/wordPot/mistery.jpeg" alt="プロフィール画像" class="img-circle" style="width:180px;height:180px;">
       </div>
       <h2><div class="text" style="clear:both;margin-top:20px;"><?php echo $userprofile["UserProfile"]["nickname"]?></div></h2>
-      <h2><div class="text" style="clear:both;"><img src="/wordPot/ico_gold.gif" style="width:30px;"><?php echo $userprofile["UserProfile"]["rank"]?></div></h2>
+      <h2><div class="text" style="clear:both;"><img src="/wordPot/ico_gold.gif" style="width:35px;margin-right:5px;margin-bottom:7px;"><?php echo $userprofile["UserProfile"]["rank"]?>位</div></h2>
     </div>
     <div style="float:left;margin-left:20px;">
       <div style="float:left;">
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="text" style="clear:both;">
-      <div style="margin-top:80px;"><h4>単語帳一覧</h4></div>
+      <div style="margin-top:340px;"><h4>単語帳一覧</h4></div>
       <table class="table" style="background-color:white;">
           <tr>
             <th>番号</th>
@@ -34,7 +34,7 @@
           </tr>
           <tr>
             <td>3</td>
-            <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div></td>
+            <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword["UserWord"]["rank"]?>"></div></td>
             <td><a>disgust</a></td>
           </tr>
       </table>
