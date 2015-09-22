@@ -1,3 +1,15 @@
+<script>
+    $(function() {
+        $(".rateit1").rateit();
+        //$(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
+        $("#rate0").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rate0').val($(this).rateit('value'));
+      });
+    });
+</script>
+
 <div style="margin:120px;">
   <h3 style="margin:25px 0px 30px 0px; text-decoration: underline;">まとめて追加</h3>
   <form method = "post">

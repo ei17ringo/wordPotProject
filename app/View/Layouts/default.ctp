@@ -25,17 +25,6 @@
     <script src="/wordPot/assets/js/chart.js"></script>
     <script src="/wordPot/Rateit/src/jquery.rateit.min.js"></script>
 
-    <script>
-    $(function() {
-        $(".rateit1").rateit();
-        //$(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
-        $("#rate0").bind('rated', function() {
-          //alert('rate0:rating: ' + $(this).rateit('value'));
-        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
-        $('#rate0').val($(this).rateit('value'));
-      });
-    });
-    </script>
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
