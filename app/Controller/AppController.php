@@ -57,3 +57,19 @@ class AppController extends Controller {
 		$this->set(compact('nickname'));
 	}
 }
+
+	public $uses = array('UserProfile');
+
+	public function beforeFilter(){
+		$this->Auth->allow('top','login','logout','signup');
+		$nickname = $this->Auth->user('username');
+		
+		$user_profile = $this->UserProfile->find('first',array('conditions'=>array('user_id'=>$this->Auth->user('id'))));
+
+		if (!empty($user_profile)){
+			$nickname = $user_profile['UserProfile']['nickname'];
+		}
+
+		$this->set(compact('nickname'));
+
+	}
