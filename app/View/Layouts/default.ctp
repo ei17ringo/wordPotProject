@@ -28,8 +28,11 @@
     <script>
     $(function() {
         $(".rateit1").rateit();
-        $(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
-        $("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        //$(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
+        $("#rate0").bind('rated', function() {
+          //alert('rate0:rating: ' + $(this).rateit('value'));
+        //$("#rank-" + $(this).attr('data-id')).val($(this).rateit('value'));
+        $('#rate0').val($(this).rateit('value'));
       });
     });
     </script>

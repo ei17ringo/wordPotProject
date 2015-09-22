@@ -4,16 +4,16 @@ class UserWord extends AppModel{
 
 	public $filterArgs = array('word_id' => array('type'=>'like', 'field'=>array('UserWord.word_id', 'UserWord.comment', 'UserWord.rank')), );
 
-	public function getData($id){
-		$sql = "SELECT * FROM words, user_words WHERE words.id=user_words.word_id;";
+	// public function getData($id){
+	// 	$sql = "SELECT * FROM words, user_words WHERE words.id=user_words.word_id;";
 
-		$params = array(
-			'id'=> $id
-		);
+	// 	$params = array(
+	// 		'id'=> $id
+	// 	);
 
-		$data = $this->query($sql,$params);
-		return $data;
-	}
+	// 	$data = $this->query($sql,$params);
+	// 	return $data;
+	// }
 
     public $validate = array('rank' => array('rule' => 'notEmpty'),
     						'word' => array('rule' => 'notEmpty'),
