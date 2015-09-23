@@ -75,7 +75,7 @@
       <div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" id="rate<?php echo $i;?>"></div>
       <input style="width:10%;" type="text" placeholder="英単語" name="data[<?php echo $i; ?>][Word][word]">
       <textarea placeholder="memo" cols="80" style="margin-left:10%; width:60%; border:1px #c0c0c0 solid;" name="data[<?php echo $i;?>][UserWord][comment]"></textarea>
-      <input type="hidden" name="data[<?php echo $i;?>][UserWord][rank]" id="rank-<?php echo $i;?>" value="">
+      <input type="hidden" name="data[<?php echo $i;?>][UserWord][rank]" id="rank-<?php echo $i;?>" value="0">
     </div>
   <?php endfor;?>
 </div>
