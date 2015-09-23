@@ -64,9 +64,9 @@ class UserWordsController extends AppController{
     	}
 	}
    	
+		$this->set('userwords',$results);
 	public function view($id = null){
 		$results = $this->UserWord->findById($id);
-		$this->set('userwords',$results);
 	}
 
 	public function index(){
