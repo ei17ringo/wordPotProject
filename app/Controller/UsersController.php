@@ -4,6 +4,8 @@ class UsersController extends AppController {
 
 	//public $components = array('Session');
 
+	public $uses = array('UserProfile', 'User');
+
 	public function beforeFilter(){
 		parent::beforeFilter();
 		//$this->Auth->allow('signup');
@@ -41,6 +43,18 @@ class UsersController extends AppController {
 			}else{
 				$this->Session->setFlash(__('ユーザー登録できませんでした。再度登録してください。'));
 			}
+
+			//$AddUser = $this->request->data;
+			$this->UserProfile->create();
+			$AddProfile=array(
+				'UserProfile'=>array(
+					'user_id'=>'',
+					'nickname'=>$this->request->data['User']['username'],
+					'created'=>date("Y-m-d H:i:s"),
+					'modified'=>date("Y-m-d H:i:s")
+				)
+			);
+
 		}
 	}
 
