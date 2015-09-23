@@ -30,16 +30,22 @@ jQuery(function($){
   //debug($userwords);
   $i = 0;
   foreach ($userwords as $userword) { ?>
-      <div class="msg" id ="target<?php echo $i; ?>">
-          <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
+      
+
+      <div class="msg" id ="target<?php echo $i; ?>" style="background-color:white; height:100px;">
+          <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
           <div style="width:200px; margin:0px; float:left;">
-            <a><?php echo $userword['User']['username']?></a><br />
-            <span><?php echo $userword['UserWord']['rank']?></span>
+            <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
+              <a style><?php echo $userword['User']['username']?></a><br />
+            </div>
+            <div style="padding-left:40px;">
+              <span>ランク：<?php echo $userword['UserWord']['rank']?></span>
+            </div>
           </div>
-          <div class="new word"><?php echo $userword['Word']['word']?></div>
-          <div class="comment"><?php echo $userword['UserWord']['comment']; ?></div> 
-          <input type="submit" value="★" class="btn" style="background-color: #ffbd66;">
-      </div>    
+          <div style="font-size:120%; margin-bottom:5px;"><?php echo $userword['Word']['word']?></div>
+          <div class="comment"><p><?php echo $userword['UserWord']['comment']; ?></p></div> 
+      </div>
+
 <?php
   $i++;    
   }
