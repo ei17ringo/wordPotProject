@@ -44,7 +44,9 @@ jQuery(function($){
           </div>
           <div style="font-size:120%; margin-bottom:5px;"><?php echo $userword['Word']['word']?></div>
           <div class="comment"><p><?php echo $userword['UserWord']['comment']; ?></p></div>
-          <input class="btn" style="background-color: #ffbd66;" type="button" onclick="location.href='#'"value="★">
+          <form action="/wordPot/favorite_user_words/add/<?php echo $userword['UserWord']['id']; ?>">
+          <input class="btn" style="background-color: #ffbd66;" type="button" value="★">
+          </form>
       </div>
 
 <?php
