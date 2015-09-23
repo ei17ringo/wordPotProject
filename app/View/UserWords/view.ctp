@@ -18,14 +18,15 @@
     <form method="post" action="/wordPot/user_words/edit">
     
     <div style="margin-right:auto;margin-left:auto; width:70%;">
-      <div class="col-lg-6 col-lg-offset-4 left comment"><h1><b><?php echo $userwords['UserWord']['word_id'];?></b></h1>
-      <input class="btn" type="submit" value="編集" style="background-color: #ffbd66; width:90px;">
+      <div>
+        <h1><b><?php echo $userwords['UserWord']['word_id'];?></b></h1>
+        <input class="btn" type="submit" value="編集" style="background-color: #ffbd66; width:90px; margin-left:80%;">
       </div>
       <h3 style="clear:both;">重要度</h3>
-      <div class="rateit1" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"><?php echo $userwords['UserWord']['rank'];?></div>
+      <div class="rateit1" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userwords['UserWord']['rank'];?>"></div>
       <h3>意味・例文</h3>
-      <div class="comment" style="width:90%; height:200px; resize:none; margin-right:auto;"></div>
-      <h3>メモ</h3>
+      <div class="comment" style="width:90%; height:200px; resize:none; margin-right:auto; margin-bottom:5%;"></div>
+      <h3 style="clear:both;">メモ</h3>
       <label class="control-label" for="text"></label>
       <div class="comment" style="width:90%; height:100px; resize:none; margin-right:auto;"><?php echo $userwords['UserWord']['comment']; ?></div>
     </div>

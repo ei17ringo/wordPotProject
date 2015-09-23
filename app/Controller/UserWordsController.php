@@ -38,7 +38,6 @@ class UserWordsController extends AppController{
 		            	$AddWord['UserWord']['user_id'] = $user_id;
 		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
 		            	$AddWord['UserWord']['study_date'] = date("Y-m-d H:i:s");
-		            	//$AddWord['UserWord']['rank'] = ;
 		            	$this->UserWord->save($AddWord);
             	}
             }
@@ -65,9 +64,9 @@ class UserWordsController extends AppController{
     	}
 	}
    	
+		$this->set('userwords',$results);
 	public function view($id = null){
 		$results = $this->UserWord->findById($id);
-		$this->set('userwords',$results);
 	}
 
 	public function index(){
