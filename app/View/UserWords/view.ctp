@@ -15,7 +15,7 @@
   </div>
 
   <div class="col-sm-10">
-    <form method="post" action="/wordPot/user_words/edit">
+    <form action="/wordPot/user_words/edit">
     
     <div style="margin-right:auto;margin-left:auto; width:70%;">
       <div>

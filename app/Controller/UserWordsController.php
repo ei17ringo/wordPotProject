@@ -63,7 +63,7 @@ class UserWordsController extends AppController{
 	      	}
     	}
 	}
-   	
+
 	public function view($id = null){
 		$results = $this->UserWord->findById($id);
 	}

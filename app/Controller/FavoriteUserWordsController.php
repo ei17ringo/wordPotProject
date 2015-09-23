@@ -1,7 +1,7 @@
 <?php
 class FavoriteUserWordsController extends AppController {
 
-    //ユーザーの追加
+    //お気に入りの追加
     public function add($fv_user_word_id = null){
     	$FavoriteUserWord['FavoriteUserWord']['user_id'] = $this->Auth->user('id');
 		$FavoriteUserWord['FavoriteUserWord']['user_word_id'] = $fv_user_word_id;
