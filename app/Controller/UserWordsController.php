@@ -34,8 +34,8 @@ class UserWordsController extends AppController{
 	            	}
 
 	            	 	$this->UserWord->create();
-		            	//$user_id = $this->Auth->user('id');
-		            	$AddWord['UserWord']['user_id'] = 1;
+		            	$user_id = $this->Auth->user('id');
+		            	$AddWord['UserWord']['user_id'] = $user_id;
 		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
 		            	$AddWord['UserWord']['study_date'] = date("Y-m-d H:i:s");
 		            	//$AddWord['UserWord']['rank'] = ;
