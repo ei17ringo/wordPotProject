@@ -64,7 +64,6 @@ class UserWordsController extends AppController{
     	}
 	}
    	
-		$this->set('userwords',$results);
 	public function view($id = null){
 		$results = $this->UserWord->findById($id);
 	}
@@ -72,7 +71,38 @@ class UserWordsController extends AppController{
 	public function index(){
 		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
 		$this->set('userwords',$this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC'))));
-		
+
+		if ($this->request->is('post')){
+			$AddWord = $this->request->data;
+			//debug($AddWord);
+			foreach ($this->request->data as $key => $AddWord) {
+            	if(($AddWord['Word']['word'] !== '') && ($AddWord['UserWord']['comment'] !== '')) {
+        			$searchword = $this->Word->find('first', array('conditions'=>array('word' => $AddWord['Word']['word'])));
+	            	//入力されたwordがあるかどうかを確かめる
+	            	if (empty($searchword)){
+	            		$this->Word->create();
+		            	$AddWord['Word']['study_count'] = 1;
+		            	$this->Word->save($AddWord);
+		            	$newid = $this->Word->getLastInsertID();
+		            	$searchword['Word'] = $AddWord['Word'];
+		            	$searchword['Word']['id'] = $newid;
+		            	var_dump($AddWord);
+	            	}
+
+	            	 	$this->UserWord->create();
+		            	$user_id = $this->Auth->user('id');
+		            	$AddWord['UserWord']['user_id'] = $user_id;
+		            	$AddWord['UserWord']['word_id'] = $searchword['Word']['id'];
+		            	$AddWord['UserWord']['study_date'] = date("Y-m-d H:i:s");
+		            	$this->UserWord->save($AddWord);
+            	}
+            }
+
+        }
+
+	
 	}
+		
+	
 }
 ?>
