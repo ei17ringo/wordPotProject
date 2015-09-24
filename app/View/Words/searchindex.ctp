@@ -19,10 +19,10 @@
 
       <?php foreach($word_friends as $word_friend): ?>
       <div class="msg" style="background-color:white; height:100px;">
-          <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
+          <img src="/wordPot/memberpicture/<?php echo $word_friends['UserProfile']['picture']; ?>" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
-              <a style=><?php echo $word_friend['UserProfile']['nickname']; ?></a><br />
+              <a href="/wordPot/user_profiles/index/<?php echo $userword['UserWord']['user_id']; ?>"><?php echo $word_friend['UserProfile']['nickname']; ?></a><br />
             </div>
             <div style="padding-left:40px;">
               <span>ランク：<?php echo $word_friend['UserProfile']['rank']; ?></span>

@@ -111,30 +111,12 @@
 					<p>タイムラインで他のユーザーが<br>どんな単語を学んでいるか知ることができます。<br>気になる単語は、お気に入り登録！</p>
 				</div>
 				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/iphone.png" alt="" style="border:solid 2px #ffbd66;">
+					<img src="/wordPot/assets/img/timeline.png" alt="" width="477px" height="263px" style="border:solid 2px #ffbd66;">
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="green">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/iphone.png" alt="" style="border:solid 2px #ffbd66;">
-				</div>
-				<div class="col-lg-7 centered">
-					<h3>英語学習のモチベーションアップ！</h3>
-					<p>学習した量がランクになって表示されます。<br>
-						他のユーザーに負けないようにたくさん英単語を追加しよう。</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-
-
-	
 	
 
 
