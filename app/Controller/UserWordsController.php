@@ -52,8 +52,9 @@ class UserWordsController extends AppController{
 	}
 
 	public function edit($id = null){
+		$userwords = $this->UserWord->findById($id);
+		$this->set(compact('userwords'));
 		$this->UserWord->id=$id;
-		$this->request->data=$this->UserWord->findById($id);
 		if ($this->request->is('post')) {
 	        if ($this->UserWord->save($this->request->data)) {
 	            $this->Session->setFlash('編集しました！');
@@ -62,6 +63,8 @@ class UserWordsController extends AppController{
 	      		$this->Session->setFlash('編集に失敗しました！');
 	      	}
     	}
+    	$this->request->data=$this->UserWord->findById($id);
+	
 	}
 
 	public function view($id = null){
