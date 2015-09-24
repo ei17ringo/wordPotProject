@@ -1,3 +1,6 @@
+<div style="margin: 120px;">
+      <h3 style="margin:25px 0px 20px 0px; text-decoration: underline;">お気に入り    </h3>
+
 <div class="msg">
           <img width="48px" height="48px"  style="border: 2px solid; float:left; margin-left:10px;">
           <div style="width:200px; margin:0px; float:left;">
