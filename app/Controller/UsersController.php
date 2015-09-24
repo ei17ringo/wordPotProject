@@ -38,6 +38,20 @@ class UsersController extends AppController {
 			$this->User->create();
 			//debug($this->request->data);
 			if($this->User->save($this->request->data)){
+				$this->UserProfile->create();
+				$AddProfile=array(
+					'UserProfile'=>array(
+						'user_id'=>$this->User->getLastInsertID(),
+						'nickname'=>$this->request->data['User']['username'],
+						'created'=>date("Y-m-d H:i:s"),
+						'modified'=>date("Y-m-d H:i:s"),
+						'rank'=>0,
+						'description'=>'',
+						'picture'=>''
+					)
+				);
+				$this->UserProfile->save($AddProfile);
+
 				$this->redirect(array('action'=>'top'));
 				$this->Session->setFlash(__('ユーザー登録されました'));
 			}else{
@@ -45,15 +59,6 @@ class UsersController extends AppController {
 			}
 
 			//$AddUser = $this->request->data;
-			$this->UserProfile->create();
-			$AddProfile=array(
-				'UserProfile'=>array(
-					'user_id'=>'',
-					'nickname'=>$this->request->data['User']['username'],
-					'created'=>date("Y-m-d H:i:s"),
-					'modified'=>date("Y-m-d H:i:s")
-				)
-			);
 
 		}
 	}
