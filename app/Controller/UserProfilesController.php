@@ -33,22 +33,21 @@ class UserProfilesController extends AppController{
         	$this->UserProfile->id=$this->request->data['id'];
             debug($_FILES);
             $fileName = $_FILES['image']['name'];
-            if (!empty($fileName)) {
+            /*if (!empty($fileName)) {
                 $ext = substr($fileName, -3);
-                if ($ext != 'jpg' && $ext != 'gif') {
-                    $error['image'] = 'type';
+                
                 }
-            }
+            }*/
 
             if (empty($error)) {
+               
                 //画像アップロード
                 $image = date('YmdHis') . $_FILES['image']['name'];
-                move_uploaded_file($_FILES['image']['tmp_name'], '/wordPot/webroot/memberpicture/' . $image);
+                debug($image);
+                move_uploaded_file($_FILES['image']['tmp_name'], '/home/wordpot/www/wordPot/app/webroot/memberpicture/'.$image);
 
-                $_SESSION['join'] = $_POST;
-                $_SESSION['join']['image'] =$image;
-                header('Location: index.ctp');
-                exit();
+                $this->request->data['UserProfile']['picture'] = $image; //画像をデータベスに格納
+                
             }
 
             if($this->UserProfile->save($this->request->data)){
