@@ -78,9 +78,9 @@
       <input type="hidden" name="data[<?php echo $i;?>][UserWord][rank]" id="rank-<?php echo $i;?>" value="0">
     </div>
   <?php endfor;?>
-</div>
   
-<div style="margin-bottom:20%;" class="centered">
-  <input class="btn" type="submit" value="追加" style="background-color: #ffbd66; width:200px;">
+    <div style="margin-bottom:20%;" class="centered">
+      <input class="btn" type="submit" value="追加" style="background-color: #ffbd66; width:200px;">
+    </div>
+  </form>
 </div>
-</form>

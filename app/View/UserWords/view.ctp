@@ -1,3 +1,10 @@
+<script>
+  $(function(){
+    $(".rateit1").rateit();
+    $("#rate0").bind('rated', function(){
+    });
+  });
+</script>
 <div class="row" style="margin:120px;">
   <h3 style="margin:25px 0px 30px 0px; text-decoration: underline;">単語詳細ページ</h3>
   <div class="col-sm-2">
@@ -15,11 +22,11 @@
   </div>
 
   <div class="col-sm-10">
-    <form action="/wordPot/user_words/edit">
+    <form action="/wordPot/user_words/edit/<?php echo $userwords['UserWord']['id']?>">
     
     <div style="margin-right:auto;margin-left:auto; width:70%;">
       <div>
-        <h1><b><?php echo $userwords['UserWord']['word_id'];?></b></h1>
+        <h1><b><?php echo $userwords['Word']['word'];?></b></h1>
         <input class="btn" type="submit" value="編集" style="background-color: #ffbd66; width:90px; margin-left:80%;">
       </div>
       <h3 style="clear:both;">重要度</h3>
