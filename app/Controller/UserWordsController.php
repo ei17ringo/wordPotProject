@@ -68,24 +68,24 @@ class UserWordsController extends AppController{
 
 	public function view($id = null){
 			try {
-			// $results = $this->UserWord->findById($id);
+			$results = $this->UserWord->findById($id);
 
-			// $enc_word = urlencode($results['Word']['word']);
-			// $url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
+			$enc_word = urlencode($results['Word']['word']);
+			$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
 	    
-	  //   	$response_xml_data = file_get_contents($url);
-	  //   	$data = simplexml_load_string($response_xml_data);
-	 	// 	debug($data);
+	    	$response_xml_data = file_get_contents($url);
+	    	$data = simplexml_load_string($response_xml_data);
+	 		debug($data);
 
 			
-	 	// 	debug($data->TitleList->DicItemTitle['ItemID']);
+	 		debug($data->TitleList->DicItemTitle['ItemID']);
 
-	 	// 	$itemID = $data->TitleList->DicItemTitle['ItemID'];
+	 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
 
-	 	// 	$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
-	 	// 	$result_xml_data = file_get_contents($item_url);
-	  //   	$result = simplexml_load_string($result_xml_data);
-	 	// 	debug($result);
+	 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
+	 		$result_xml_data = file_get_contents($item_url);
+	    	$result = simplexml_load_string($result_xml_data);
+	 		debug($result);
 			
 		} catch (Exception $e) {
 			
@@ -97,6 +97,30 @@ class UserWordsController extends AppController{
 	public function index(){
 		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
 		$this->set('userwords',$this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC'))));
+
+		try {
+			$results = $this->UserWord->findById($id);
+
+			$enc_word = urlencode($results['Word']['word']);
+			$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
+	    
+	    	$response_xml_data = file_get_contents($url);
+	    	$data = simplexml_load_string($response_xml_data);
+	 		//debug($data);
+
+			
+	 		//debug($data->TitleList->DicItemTitle['ItemID']);
+
+	 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
+
+	 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
+	 		$result_xml_data = file_get_contents($item_url);
+	    	$result = simplexml_load_string($result_xml_data);
+	 		debug($result);
+			
+		} catch (Exception $e) {
+			
+		}
 
 		if ($this->request->is('post')){
 			$AddWord = $this->request->data;

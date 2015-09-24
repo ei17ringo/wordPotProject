@@ -82,7 +82,7 @@
 					<p>あなたが今日、学んだ英単語を保存しよう。<br>意味は入力しなくても表示されるので便利です。<br>単語に対してメモをつけることもできます。</p>
 				</div>
 				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/words.png" width="350px" height="310px" alt="">
+					<img src="/wordPot/assets/img/words.png" width="350px" height="310px" alt="" style="border:solid 2px #ffbd66;">
 				</div>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/meaning.png" width="380px" height="280px" alt="">
+					<img src="/wordPot/assets/img/meaning.png" width="380px" height="280px" alt="" style="border:solid 2px #ffbd66;">
 				</div>
 				<div class="col-lg-7 centered">
 					<h3>意味を覚えるのに最適</h3>
@@ -111,7 +111,7 @@
 					<p>タイムラインで他のユーザーが<br>どんな単語を学んでいるか知ることができます。<br>気になる単語は、お気に入り登録！</p>
 				</div>
 				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/iphone.png" alt="">
+					<img src="/wordPot/assets/img/iphone.png" alt="" style="border:solid 2px #ffbd66;">
 				</div>
 			</div>
 		</div>
@@ -121,7 +121,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 centered">
-					<img src="/wordPot/assets/img/iphone.png" alt="">
+					<img src="/wordPot/assets/img/iphone.png" alt="" style="border:solid 2px #ffbd66;">
 				</div>
 				<div class="col-lg-7 centered">
 					<h3>英語学習のモチベーションアップ！</h3>
