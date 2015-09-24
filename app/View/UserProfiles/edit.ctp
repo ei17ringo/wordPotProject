@@ -10,8 +10,12 @@ echo $this->Form->create('UserProfile', array('action'=>'edit', 'type'=>'file'))
     <!--<div class="row-fluid">-->
    <div class="span2" style="float:left;">
     <div>
+      <?php if($userprofile["UserProfile"]["picture"] == ""){ ?>
       <img src="/wordPot/mistery.jpeg" alt="プロフィール画像" class="img-circle" style="width:180px;height:180px;">
-      <input type="file" name-"image" size="width:180px;" />
+      <?php }else{ ?>
+      <img src="/wordPot/memberpicture/<?php echo $userprofile["UserProfile"]["picture"] ?>" alt="プロフィール画像" class="img-circle" style="width:180px;height:180px;">
+      <?php } ?>
+      <input type="file" name="image" size="width:180px;" />
     </div>
     <div style="clear:both;margin-top:20px;"><input type="text" name="nickname" style="width:180px;" value="<?php echo $userprofile["UserProfile"]["nickname"]?>"></div>
     </div>
