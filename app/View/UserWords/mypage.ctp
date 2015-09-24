@@ -36,7 +36,7 @@ jQuery(function($){
           <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
-              <a href="/wordPot/user_profiles/edit" style><?php echo $userword['User']['username']?></a><br />
+              <a href="/wordPot/user_profiles/index/<?php echo $userword['UserWord']['user_id']; ?>" style><?php echo $userword['User']['username']?></a><br />
             </div>
             <div style="padding-left:40px;">
               <span>ランク：<?php echo $userword['UserWord']['rank']?></span>
