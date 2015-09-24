@@ -64,7 +64,6 @@ class UserWordsController extends AppController{
 	      	}
     	}
     	$this->request->data=$this->UserWord->findById($id);
-	
 	}
 
 	public function view($id = null){
