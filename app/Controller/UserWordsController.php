@@ -67,20 +67,15 @@ class UserWordsController extends AppController{
 	}
 
 	public function view($id = null){
-<<<<<<< HEAD
+
 		try {
-=======
 			try {
->>>>>>> 63b4e27ce913ed011cd1ce612c046cca37beaf31
+
 			$results = $this->UserWord->findById($id);
 
 			$enc_word = urlencode($results['Word']['word']);
 			$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
-<<<<<<< HEAD
-	    	//上記に書かれているURLがAPI
-=======
-	    
->>>>>>> 63b4e27ce913ed011cd1ce612c046cca37beaf31
+
 	    	$response_xml_data = file_get_contents($url);
 	    	$data = simplexml_load_string($response_xml_data);
 	 		debug($data);
