@@ -67,15 +67,13 @@ class UserWordsController extends AppController{
 	}
 
 	public function view($id = null){
-
 		try {
-			try {
-
 			$results = $this->UserWord->findById($id);
 
 			$enc_word = urlencode($results['Word']['word']);
 			$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
 
+	    	//上記に書かれているURLがAPI
 	    	$response_xml_data = file_get_contents($url);
 	    	$data = simplexml_load_string($response_xml_data);
 	 		debug($data);
@@ -99,7 +97,8 @@ class UserWordsController extends AppController{
 
 	public function index(){
 		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
-		$this->set('userwords',$this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC'))));
+		$userwords = $this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC')));
+		$this->set('userwords',$userwords);
 
 		try {
 			$results = $this->UserWord->findById($id);
