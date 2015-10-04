@@ -37,9 +37,9 @@ $(function(){
           <tr>
             <td><?php echo $i; ?></td>
             <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div></td>
-            <td><a href="/wordPot/user_words/view/<?php echo $userword['Userword']['id']; ?>"><?php echo $userword['Word']['word']; ?></a></td>
+            <td><?php echo '<a href="/wordPot/user_words/view/'.$userword['UserWord']['id'].'">'; ?><?php echo $userword['Word']['word']; ?></a></td>
             <td id="meaning"><?php echo $result->body; ?></td>
-            <td><button class="btn btn-default" action="/wordPot/user_words/edit/<?php echo $userword['Userword']['id']; ?>">編集</button></td>
+            <td><?php echo '<button class="btn btn-default" action="/wordPot/user_words/edit/'.$userword['UserWord']['id'].'">'; ?>編集</button></td>
           </tr>
           <?php $i++; ?>
         <?php endforeach; ?>

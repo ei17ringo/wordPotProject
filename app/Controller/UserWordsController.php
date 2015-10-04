@@ -75,27 +75,29 @@ class UserWordsController extends AppController{
 
 	    	//上記に書かれているURLがAPI
 	    	$response_xml_data = file_get_contents($url);
-	    	$data = simplexml_load_string($response_xml_data);
-	 		debug($data);
-
+	    	$data1 = simplexml_load_string($response_xml_data);
+	    	$data2 = json_decode(json_encode($data1),true); //普通の配列の形にする
+ 	 		debug($data2);
 			
-	 		debug($data->TitleList->DicItemTitle['ItemID']);
+	 		debug($data2['TitleList']['DicItemTitle']['ItemID']);
 
-	 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
+	 		$itemID = $data2['TitleList']['DicItemTitle']['ItemID'];
 
 	 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
 	 		$result_xml_data = file_get_contents($item_url);
-	    	$result = simplexml_load_string($result_xml_data);
-	 		debug($result);
+	    	$result1 = simplexml_load_string($result_xml_data);
+	    	$result2 = json_decode(json_encode($result1),true);
+	 		debug($result2);
 			
 		} catch (Exception $e) {
 			
 		}
 
 		$this->set('userwords',$results);
+		$this->set('meaning',$result2);
 	}
 
-	public function index(){
+	public function index($id = null){
 		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
 		$userwords = $this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC')));
 		$this->set('userwords',$userwords);
@@ -108,7 +110,7 @@ class UserWordsController extends AppController{
 	    
 	    	$response_xml_data = file_get_contents($url);
 	    	$data = simplexml_load_string($response_xml_data);
-	 		//debug($data);
+	 		debug($data);
 
 			
 	 		//debug($data->TitleList->DicItemTitle['ItemID']);
