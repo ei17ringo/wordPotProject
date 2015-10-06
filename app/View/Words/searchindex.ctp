@@ -26,7 +26,7 @@
           <?php //echo '<img src="/wordPot/memberpicture/'.$word_friend['UserProfile']['picture'].'" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">'; ?>
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
-              <?php echo '<a href="/wordPot/user_profiles/index/'.$word_friend['UserWord']['user_id'].'">'; ?>
+              <?php echo '<a href="/wordPot/user_profiles/index?id='.$word_friend['UserWord']['user_id'].'">'; ?>
               <?php echo $word_friend['UserProfile']['nickname']; ?></a><br />
             </div>
           </div>
