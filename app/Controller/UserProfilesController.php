@@ -12,7 +12,7 @@ class UserProfilesController extends AppController{
 
 	public function index($user_id = null){
 		//set('送信する変数名',$this->Model名->find('条件'));
-		
+		debug($user_id);
 		$conditions = array('user_id', $user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);

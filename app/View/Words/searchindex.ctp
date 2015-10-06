@@ -19,7 +19,11 @@
 
       <?php foreach($word_friends as $word_friend): ?>
       <div class="msg" style="background-color:white; height:100px;">
-          <?php echo '<img src="/wordPot/memberpicture/'.$word_friend['UserProfile']['picture'].'" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">'; ?>
+        <?php if($word_friend['UserProfile']['picture'] == ''){ ?>
+          <img src="/wordPot/mistery.jpeg" alt="プロフィール画像" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
+        <?php }else{ 
+          echo '<img src="/wordPot/memberpicture/'.$word_friend['UserProfile']['picture'].'" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">';} ?>
+          <?php //echo '<img src="/wordPot/memberpicture/'.$word_friend['UserProfile']['picture'].'" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">'; ?>
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
               <?php echo '<a href="/wordPot/user_profiles/index/'.$word_friend['UserWord']['user_id'].'">'; ?>
