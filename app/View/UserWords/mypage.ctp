@@ -8,17 +8,23 @@
   }
 </style>
 <script>
-jQuery(function($){
-  var id = 0;
-  var target = $('#scroll-box');
-  setInterval(function(){
-    if (id > 20) {
-      return;
-    }
-    target.animate({ scrollTop: $('#target' + id).offset().top -55}, 'slow');
-    id++;
-  }, 1000);
-});
+  jQuery(function($){
+    var id = 0;
+    var target = $('#scroll-box');
+    setInterval(function(){
+      if (id > 20) {
+        return;
+      }
+      target.animate({ scrollTop: $('#target' + id).offset().top -55}, 'slow');
+      id++;
+    }, 1000);
+  });
+
+  $(function() {
+    $(".rateit1").rateit();
+    $("#rate0").bind('rated', function(){
+    });
+  });
 </script>
 
 <div style="margin: 120px;">
@@ -27,19 +33,17 @@ jQuery(function($){
 
 <div id="scroll-box">
 <?php
-  //debug($userwords);
   $i = 0;
   foreach ($userwords as $userword) { ?>
       
-
       <div class="msg" id ="target<?php echo $i; ?>" style="background-color:white; height:100px;">
           <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
-              <a href="/wordPot/user_profiles/index/<?php echo $userword['UserWord']['user_id']; ?>" style><?php echo $userword['User']['username']?></a><br />
+              <a href="/wordPot/user_profiles/index/<?php echo $userword['UserWord']['user_id']; ?>"><?php echo $userword['User']['username']; ?></a><br />
             </div>
             <div style="padding-left:40px;">
-              <span>ランク：<?php echo $userword['UserWord']['rank']?></span>
+              <div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div>
             </div>
           </div>
           <div style="font-size:120%; margin-bottom:5px;"><?php echo $userword['Word']['word']?></div>
@@ -47,6 +51,7 @@ jQuery(function($){
           <form action="/wordPot/favorite_user_words/add/<?php echo $userword['UserWord']['id']; ?>">
           <input class="btn" style="background-color: #ffbd66;" type="button" value="★">
           </form>
+        <input type="hidden" name="data[UserWord][rank]" value="0">
       </div>
 
 <?php
@@ -57,4 +62,3 @@ jQuery(function($){
     </div>
 
 </div>
-

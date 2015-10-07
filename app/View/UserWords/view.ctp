@@ -7,20 +7,6 @@
 </script>
 <div style="margin: 0 auto;">
   <h3 style="margin:25px 0px 30px 0px; text-decoration: underline;">単語詳細ページ</h3>
- <!-- <div class="col-sm-2">
-    <div style="border:1px solid #c0c0c0; border-radious:10px 10px; background:white; width:50%;margin:1% 70%;">
-      <span>カテゴリー一覧</span>
-      <ul style="line-height:2rem;">
-       <?php 
-       // $alphabet = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
-        ?>
-        <?php for ($i=0; $i < 26; $i++) : ?>
-        <li><a><?php // echo $alphabet[$i];?></a></li>
-        <?php endfor; ?>
-        </ul>
-    </div>
-  </div> -->
-
   <div style="width:80%;">
     <form action="/wordPot/user_words/edit/<?php echo $userwords['UserWord']['id']?>">
     

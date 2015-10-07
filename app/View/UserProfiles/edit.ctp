@@ -23,9 +23,9 @@ echo $this->Form->create('UserProfile', array('action'=>'edit', 'type'=>'file'))
       <div style="float:left;">
       <textarea name="description" cols="35" rows="10"><?php echo $userprofile["UserProfile"]["description"]?></textarea>
         <div class="span2" style="clear:both;">
-        <button class="btn" type="submit" style="background:#ffbd66;margin-top:10px;">SAVE
-        </button>
-</form>
+        <form action="/wordPot/user_pofiles/index/<?php echo $userwords['UserWord']['id']; ?>">
+        <button class="btn" type="submit" style="background:#ffbd66;margin-top:10px;">SAVE</button>
+        </form>
         </div>
       </div>
     </div> 
