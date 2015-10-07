@@ -1,6 +1,5 @@
 <?php                      //model名
 echo $this->Form->create('UserProfile', array('action'=>'edit', 'type'=>'file'));
-
 ?>
 <div style="margin:120px;">
   <input type="hidden" name="user_id" value="<?php echo $userprofile["UserProfile"]["user_id"]?>">
