@@ -23,7 +23,6 @@ class WordsController extends AppController {
             $word_friends = $this->Word->find('all',array('conditions'=>$conditions_w,'order'=>array('UserWord.created DESC'))); //$word_friendsにテーブルwordsのデータを代入
         }
 
-        
 
         $num=0;
 
@@ -43,6 +42,8 @@ class WordsController extends AppController {
         $searched_word = $this->request->data('Word.word');
 
         $this->set('searched_word',$searched_word);
+
+        //debug($word_friends);
     }
 }
 ?>
