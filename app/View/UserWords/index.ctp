@@ -22,45 +22,7 @@ $(function(){
     </form>
   </div>
 
-<<<<<<< HEAD
-  <table class="table" style="background-color:white;">
-  <tabl>
-    <tr>
-      <th>番号</th>
-      <th>重要度</th>
-      <th>英単語</th>
-      <th>意味</th>
-      <th></th>
-    </tr>
-    <?php $i=1; ?>
-    <?php foreach($userwords as $userword): ?>
-    
-      <tr>
-        <td><?php echo $i; ?></td>
-        <td><div class="rateit1" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div></td>
-        <td><?php echo '<a href="/wordPot/user_words/view/'.$userword['UserWord']['id'].'">'; ?><?php echo $userword['Word']['word']; ?></a></td>
-        <td id="meaning"><?php echo $result->body; ?></td>
-        <td><?php echo '<button class="btn btn-default" action="/wordPot/user_words/edit/'.$userword['UserWord']['id'].'">'; ?>編集</button></td>
-      </tr>
-      <?php $i++; ?>
-    <?php endforeach; ?>
-    <!-- <tr>
-      <td>2</td>
-      <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div></td>
-      <td><a>confirm</a></td>
-      <td id="meaning">〈陳述・証拠・うわさなどを〉(正しいと)確かめる</td>
-      <td><button class="btn btn-default">編集</button></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1"></div></td>
-      <td><a>apply</a></td>
-      <td id="meaning">〈規則・原理などを〉〔…に〕適用する</td>
-      <td><button class="btn btn-default">編集</button></td>
-    </tr>-->
-  </table>
-</div>
-=======
+
       <table class="table" style="background-color:white;">
       <tabl>
         <tr>
@@ -121,4 +83,3 @@ $(function(){
         </tr>-->
       </table>
     </div> 
->>>>>>> 019435a67b23bb6ff3d3fddfa80e47b7faa747d8
