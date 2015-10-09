@@ -16,11 +16,11 @@ echo $this->Form->create('UserProfile', array('action'=>'edit', 'type'=>'file'))
       <?php } ?>
       <input type="file" name="image" size="width:180px;" />
     </div>
-    <div style="clear:both;margin-top:20px;"><input type="text" name="nickname" style="width:180px;" value="<?php echo $userprofile["UserProfile"]["nickname"]?>"></div>
+    <div style="clear:both;margin-top:20px;"><input type="text" name="data[UserProfile][nickname]" style="width:180px;" value="<?php echo $userprofile["UserProfile"]["nickname"]?>"></div>
     </div>
     <div style="float:left;margin-left:20px;">
       <div style="float:left;">
-      <textarea name="description" cols="35" rows="10"><?php echo $userprofile["UserProfile"]["description"]?></textarea>
+      <textarea name="data[UserProfile][description]" cols="35" rows="10"><?php echo $userprofile["UserProfile"]["description"]?></textarea>
         <div class="span2" style="clear:both;">
         <form action="/wordPot/user_pofiles/index/<?php echo $userwords['UserWord']['id']; ?>">
         <button class="btn" type="submit" style="background:#ffbd66;margin-top:10px;">SAVE</button>

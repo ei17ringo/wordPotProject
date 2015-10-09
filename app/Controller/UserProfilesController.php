@@ -13,25 +13,25 @@ class UserProfilesController extends AppController{
 	public function index($user_id = null){
 		//set('送信する変数名',$this->Model名->find('条件'));
         $user_id=$_GET['id'];
-        debug($user_id);
+        //debug($user_id);
 		$conditions = array('UserProfile.user_id'=>$user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);
         $current_id=$this->Auth->user('id');
         $this->set('current_id',$current_id);
 		//$this->set('userword', $userword);
-        debug($userprofile);
+        //debug($userprofile);
 	}
 
 	
 
 	public function edit($user_id = null){
         $user_id=$_GET['id'];
-        debug($user_id);
+        //debug($user_id);
 		$conditions = array('UserProfile.user_id'=>$user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);
-        debug($userprofile);
+        //debug($userprofile);
 		
 	
         
@@ -56,9 +56,22 @@ class UserProfilesController extends AppController{
                 
             }
 
-            if($this->UserProfile->save($this->request->data)){
-                $this->Session->setFlash(__('更新されました'));
-                return $this->redirect(array('action' => 'index', $user_id));
+            $editprofile=array(
+                'UserProfile'=>array(
+                    'user_id'=>$this->Auth->user('id'),
+                    'nickname'=>$this->request->data['UserProfile']['nickname'],
+                    'rank'=>'0',
+                    'description'=>$this->request->data['UserProfile']['description'],
+                    'picture'=>$image,
+                    'created'=>date("Y-m-d H:i:s"),
+                    'modified'=>date("Y-m-d H:i:s")
+                )
+            );
+
+            $this->UserProfile->create();
+            if($this->UserProfile->save($editprofile)){
+                //$this->Session->setFlash(__('更新されました'));
+                return $this->redirect('http://wordpot.sakura.ne.jp/wordPot/user_profiles/index?id='.$user_id);
             }
         }
  
