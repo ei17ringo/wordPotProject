@@ -17,6 +17,8 @@ class UserProfilesController extends AppController{
 		$conditions = array('UserProfile.user_id'=>$user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);
+        $current_id=$this->Auth->user('id');
+        $this->set('current_id',$current_id);
 		//$this->set('userword', $userword);
         debug($userprofile);
 	}
@@ -24,10 +26,12 @@ class UserProfilesController extends AppController{
 	
 
 	public function edit($user_id = null){
-
-		$conditions = array('user_id', $user_id);
+        $user_id=$_GET['id'];
+        debug($user_id);
+		$conditions = array('UserProfile.user_id'=>$user_id);
 		$userprofile = $this->UserProfile->find('first', array('conditions'=>$conditions));
 		$this->set('userprofile', $userprofile);
+        debug($userprofile);
 		
 	
         

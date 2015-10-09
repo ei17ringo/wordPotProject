@@ -18,34 +18,15 @@
       <div style="float:left;">
         <div class="comment" style="width:250px; height:200px"><?php echo $userprofile["UserProfile"]["description"]?></div>
         <div class="span2" style="clear:both;">
-        <button class="btn" type="submit" style="background:#ffbd66;margin-top:10px;"><?php
-          echo $this->Html->link('EDIT',
-           array('controller' => 'UserProfiles', 'action' => 'edit')
-          );
-            ?>
-        </button>
+
+        <?php
+          if($current_id == $userprofile["UserProfile"]["user_id"]) {
+          echo '<button class="btn" type="submit" style="background:#ffbd66;margin-top:10px;" onclick="location.href=\'/wordPot/user_profiles/edit?id='.$userprofile["UserProfile"]["user_id"].'\'">編集</button>';}
+        ?>
         </div>
       </div>
     </div>
-    <div class="text" style="clear:both;">
-      <div style="margin-top:340px;"><h4>単語帳一覧</h4></div>
-      <table class="table" style="background-color:white;">
-          <tr>
-            <th>番号</th>
-            <th>重要度</th>
-            <th>英単語</th>
-          </tr>
-          <?php $i=1; ?>
-          <?php foreach($userwords as $userword): ?>
-          <tr>
-            <td><?php echo $i; ?></td>
-            <td><div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword["UserWord"]["rank"]?>"></div></td>
-            <td><a><?php echo $userword['Word']['word']; ?></a></td>
-            <?php $i++; ?>
-            <?php endforeach; ?>
-          </tr>
-      </table>
-    </div>
+    
   </div>
 </div>
 
