@@ -3,7 +3,7 @@
 <div style="margin:120px;">
   <div class="container-fluid well span6" style="overflow:hidden;">
   <!--<div class="row-fluid">-->
-    <div class="span2" style="float:left;">
+    <div class="span2" style="float:left; margin-left:100px;">
       <div>
         <?php if($userprofile["UserProfile"]["picture"] == ""){ ?>
         <img src="/wordPot/mistery.jpeg" alt="プロフィール画像" class="img-circle" style="width:180px;height:180px;">
@@ -11,13 +11,12 @@
         <img src="/wordPot/memberpicture/<?php echo $userprofile["UserProfile"]["picture"] ?>" alt="プロフィール画像" class="img-circle" style="width:180px;height:180px;">
         <?php } ?>
       </div>
-      <h2><div class="text" style="clear:both;margin-top:20px;"><?php echo $userprofile["UserProfile"]["nickname"]?></div></h2>
-      <h2><div class="text" style="clear:both;"><img src="/wordPot/ico_gold.gif" style="width:35px;margin-right:5px;margin-bottom:7px;"><?php echo $userprofile["UserProfile"]["rank"]?>位</div></h2>
+     <div class="text" style="clear:both;margin-top:20px;text-align:center;"><h2><?php echo $userprofile["UserProfile"]["nickname"]?></h2></div>
     </div>
     <div style="float:left;margin-left:20px;">
       <div style="float:left;">
-        <div class="comment" style="width:250px; height:200px"><?php echo $userprofile["UserProfile"]["description"]?></div>
-        <div class="span2" style="clear:both;">
+        <div class="comment" style="width:400px; height:250px; background-color:white; margin-left:100px;"><p><font size="4"><?php echo $userprofile["UserProfile"]["description"]?></font></p></div>
+        <div class="span2" style="float:left;margin-top:200px;margin-left:30px;">
 
         <?php
           if($current_id == $userprofile["UserProfile"]["user_id"]) {

@@ -1,4 +1,4 @@
-    <div style="margin-top:120px;">
+    <div style="margin-top:120px;margin-bottom:50px;">
 
      <div style="margin-left:15%; margin-bottom:15px;">
       <?php

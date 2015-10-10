@@ -10,6 +10,7 @@ class UserWordsController extends AppController{
 	//find(string $type = 'first', array $params = array())
 	$userwords = $this->UserWord->find('all',array('limit' => 20, 'order' => array('UserWord.modified DESC')));
 	$this->set(compact('userwords'));
+	debug($userwords);
 
 	}
 
