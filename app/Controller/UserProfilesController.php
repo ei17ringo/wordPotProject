@@ -31,7 +31,7 @@ class UserProfilesController extends AppController{
         
         if($this->request->is(array('post', 'put'))){
         	$this->UserProfile->id=$this->request->data['id'];
-            debug($_FILES);
+            
             $fileName = $_FILES['image']['name'];
             /*if (!empty($fileName)) {
                 $ext = substr($fileName, -3);
@@ -42,8 +42,8 @@ class UserProfilesController extends AppController{
             if (empty($error)) {
                
                 //画像アップロード
-                $image = date('YmdHis') . $_FILES['image']['name'];
-                debug($image);
+                $image = date('YmdHis').$_FILES['image']['name'];
+                //debug($image);
                 move_uploaded_file($_FILES['image']['tmp_name'], '/home/wordpot/www/wordPot/app/webroot/memberpicture/'.$image);
 
                 $this->request->data['UserProfile']['picture'] = $image; //画像をデータベスに格納
