@@ -2,16 +2,30 @@
 class UserWordsController extends AppController{
 	public $helpers = array('Html', 'Form');
 
-	public $uses = array('Word', 'UserWord');
+	public $uses = array('Word', 'UserWord','UserProfile');
 
 	public function mypage(){
 		
-	//最新２０件のデータを取得する
-	//find(string $type = 'first', array $params = array())
-	$userwords = $this->UserWord->find('all',array('limit' => 20, 'order' => array('UserWord.modified DESC')));
-	$this->set(compact('userwords'));
-	debug($userwords);
+		//最新２０件のデータを取得する
+		//find(string $type = 'first', array $params = array())
+		$userwords = $this->UserWord->find('all',array('limit' => 20, 'order' => array('UserWord.modified DESC')));
+		
+		$num=0;
 
+		foreach($userwords as $userword){
+		$conditions = array('UserProfile.user_id' => array($userword['UserWord']['user_id']));
+
+		$userprof = $this->UserProfile->find('first',array(
+			'conditions' => $conditions,
+			'order' => array('modified' => 'desc')
+		));
+		//debug($userprof);
+		$userwords[$num]['UserProfile'] = $userprof['UserProfile'];
+		$num++;
+		}
+		
+		debug($userwords);
+		$this->set('userwords',$userwords);
 	}
 
 	public function add(){

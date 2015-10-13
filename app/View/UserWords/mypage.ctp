@@ -37,10 +37,13 @@
   foreach ($userwords as $userword) { ?>
       
       <div class="msg" id ="target<?php echo $i; ?>" style="background-color:white; height:100px;">
-          <img width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
+        <?php if($userword['UserProfile']['picture'] == ''){ ?>
+          <img src="/wordPot/mistery.jpeg" alt="プロフィール画像" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">
+        <?php }else{ 
+          echo '<img src="/wordPot/memberpicture/'.$userword['UserProfile']['picture'].'" width="60px" height="60px"  style="border: 2px solid; float:left; margin-left:10px; border-radius:30px; margin-top:10px;">';} ?>
           <div style="width:200px; margin:0px; float:left;">
             <div style="padding-bottom:20px; padding-left:40px; margin-top:10px;">
-              <a href="/wordPot/user_profiles/index/<?php echo $userword['UserWord']['user_id']; ?>"><?php echo $userword['User']['username']; ?></a><br />
+              <?php echo '<a href="/wordPot/user_profiles/index?id='.$userword['UserWord']['user_id'].'">'; ?><?php echo $userword['UserProfile']['nickname']; ?></a><br />
             </div>
             <div style="padding-left:40px;">
               <div class="rateit1" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="3" data-rateit-step="1" data-rateit-value="<?php echo $userword['UserWord']['rank']; ?>"></div>
