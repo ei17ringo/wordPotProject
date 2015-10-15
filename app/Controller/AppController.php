@@ -55,16 +55,18 @@ class AppController extends Controller {
 
 	public function beforeFilter(){
 		$this->Auth->allow('top','login','logout','signup');
-		$nickname = $this->Auth->user('username');
 		
-		$user_profile = $this->UserProfile->find('first',array('conditions'=>array('user_id'=>$this->Auth->user('id'))));
+		$user_profile = $this->UserProfile->find('first',array(
+			'conditions'=>array('user_id'=>$this->Auth->user('id')),
+			'order'=>array('modified'=>'desc')
+		));
 
 		if (!empty($user_profile)){
 			$nickname = $user_profile['UserProfile']['nickname'];
 		}
-
-		$this->set(compact('nickname'));
-
+		debug($user_profile);
+		$this->set(compact('user_profile'));
+		
 	}
 }
 
