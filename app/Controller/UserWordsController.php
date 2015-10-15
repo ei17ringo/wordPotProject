@@ -10,6 +10,7 @@ class UserWordsController extends AppController{
 	//find(string $type = 'first', array $params = array())
 	$userwords = $this->UserWord->find('all',array('limit' => 20, 'order' => array('UserWord.modified DESC')));
 	$this->set(compact('userwords'));
+	debug($userwords);
 
 	}
 
@@ -75,54 +76,57 @@ class UserWordsController extends AppController{
 
 	    	//上記に書かれているURLがAPI
 	    	$response_xml_data = file_get_contents($url);
-	    	$data = simplexml_load_string($response_xml_data);
-	 		debug($data);
-
+	    	$data1 = simplexml_load_string($response_xml_data);
+	    	$data2 = json_decode(json_encode($data1),true); //普通の配列の形にする
+ 	 		debug($data2);
 			
-	 		debug($data->TitleList->DicItemTitle['ItemID']);
+	 		debug($data2['TitleList']['DicItemTitle']['ItemID']);
 
-	 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
+	 		$itemID = $data2['TitleList']['DicItemTitle']['ItemID'];
 
 	 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
 	 		$result_xml_data = file_get_contents($item_url);
-	    	$result = simplexml_load_string($result_xml_data);
-	 		debug($result);
+	    	$result1 = simplexml_load_string($result_xml_data);
+	    	$result2 = json_decode(json_encode($result1),true);
+	 		debug($result2);
 			
 		} catch (Exception $e) {
 			
 		}
 
 		$this->set('userwords',$results);
+		$this->set('meaning',$result2);
 	}
 
-	public function index(){
+	public function index($id = null){
 		$conditions = array('UserWord.user_id'=>array($this->Auth->user('id')));
 		$userwords = $this->UserWord->find('all', array('conditions'=>$conditions, 'order'=>array('UserWord.created DESC')));
 		$this->set('userwords',$userwords);
+		//debug($userwords);
 
-		try {
-			$results = $this->UserWord->findById($id);
+		// try {
+		// 	$results = $this->UserWord->findById($id);
 
-			$enc_word = urlencode($results['Word']['word']);
-			$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
+		// 	$enc_word = urlencode($results['Word']['word']);
+		// 	$url = "http://public.dejizo.jp/NetDicV09.asmx/SearchDicItemLite?Dic=EJdict&Word=$enc_word&Scope=HEADWORD&Match=STARTWITH&Merge=AND&Prof=XHTML&PageSize=1&PageIndex=0";
 	    
-	    	$response_xml_data = file_get_contents($url);
-	    	$data = simplexml_load_string($response_xml_data);
-	 		//debug($data);
+	 //    	$response_xml_data = file_get_contents($url);
+	 //    	$data = simplexml_load_string($response_xml_data);
+	 // 		debug($data);
 
 			
-	 		//debug($data->TitleList->DicItemTitle['ItemID']);
+	 // 		//debug($data->TitleList->DicItemTitle['ItemID']);
 
-	 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
+	 // 		$itemID = $data->TitleList->DicItemTitle['ItemID'];
 
-	 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
-	 		$result_xml_data = file_get_contents($item_url);
-	    	$result = simplexml_load_string($result_xml_data);
-	 		debug($result);
+	 // 		$item_url="http://public.dejizo.jp/NetDicV09.asmx/GetDicItemLite?Dic=EJdict&Item=$itemID&Loc=&Prof=XHTML";
+	 // 		$result_xml_data = file_get_contents($item_url);
+	 //    	$result = simplexml_load_string($result_xml_data);
+	 // 		debug($result);
 			
-		} catch (Exception $e) {
+		// } catch (Exception $e) {
 			
-		}
+		// }
 
 		if ($this->request->is('post')){
 			$AddWord = $this->request->data;

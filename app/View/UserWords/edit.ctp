@@ -1,9 +1,8 @@
 <script>
   $(function() {
     $(".rateit1").rateit();
-    //$(".rateit1").bind('rated', function() { alert('rating: ' + $(this).rateit('value'));
-    
     $("#rate0").bind('rated', function() {
+      $('#rank-0').val($(this).rateit('value'));
     });
   });
 </script>
